@@ -64,6 +64,268 @@
                 transform: translateY(0)
             }
         }
+
+        /* ---- responsive layout ---- */
+
+        .signin-grid {
+            display: grid;
+            grid-template-columns: 44% 56%;
+            min-height: 100vh;
+        }
+
+        .signin-brand {
+            padding: 56px;
+        }
+
+        .signin-form-wrap {
+            padding: 40px;
+        }
+
+        @media (max-width: 860px) {
+            .signin-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .signin-brand {
+                padding: 32px 24px;
+            }
+
+            .signin-tagline {
+                font-size: 26px !important;
+            }
+
+            .signin-form-wrap {
+                padding: 32px 20px;
+            }
+        }
+
+        .app-shell {
+            display: grid;
+            grid-template-columns: 248px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: oklch(24% 0.045 250);
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 14px;
+            border-radius: 9px;
+            cursor: pointer;
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+
+        .content-area {
+            padding: 32px 40px 60px 40px;
+            max-width: 1280px;
+        }
+
+        @media (max-width: 900px) {
+            .app-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                flex-direction: row;
+                align-items: center;
+                padding: 10px 12px;
+                gap: 8px;
+                overflow-x: auto;
+            }
+
+            .sidebar-logo,
+            .sidebar-spacer,
+            .sidebar-user {
+                display: none;
+            }
+
+            .sidebar-nav {
+                flex-direction: row;
+                gap: 6px;
+            }
+
+            .nav-item {
+                margin-bottom: 0;
+                padding: 8px 12px;
+            }
+
+            .nav-item .nav-label {
+                display: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .content-area {
+                padding: 20px 16px 40px 16px;
+            }
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .filters-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .reports-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .reports-stat-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reports-stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dash-two-col {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .upload-review-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 22px;
+        }
+
+        @media (max-width: 900px) {
+            .dash-two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .upload-review-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+        }
+
+        .approval-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-top: 1px solid oklch(93% 0.006 250);
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .approval-row {
+                align-items: flex-start;
+            }
+
+            .approval-row .approval-value {
+                width: auto !important;
+                text-align: left !important;
+            }
+        }
+
+        .line-item-row {
+            display: grid;
+            grid-template-columns: 2.2fr 0.6fr 0.6fr 0.9fr 28px;
+            gap: 8px;
+            align-items: center;
+            padding: 9px 0;
+            border-top: 1px solid oklch(94% 0.006 250);
+        }
+
+        @media (max-width: 560px) {
+            .line-item-row {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "desc desc"
+                    "qty uom"
+                    "total remove";
+                row-gap: 6px;
+            }
+
+            .line-item-row .li-desc {
+                grid-area: desc;
+            }
+
+            .line-item-row .li-qty {
+                grid-area: qty;
+            }
+
+            .line-item-row .li-uom {
+                grid-area: uom;
+            }
+
+            .line-item-row .li-total {
+                grid-area: total;
+            }
+
+            .line-item-row .li-remove {
+                grid-area: remove;
+                justify-self: end;
+            }
+        }
+
+        .actions-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .actions-row button {
+            flex: 1 1 160px;
+        }
     </style>
 </head>
 
@@ -160,19 +422,19 @@
     </div>`;
 
             return `
-  <div style="display:grid;grid-template-columns:44% 56%;min-height:100vh;">
-    <div style="background:linear-gradient(160deg, oklch(24% 0.045 250), oklch(34% 0.05 250));display:flex;flex-direction:column;justify-content:space-between;padding:56px;">
+  <div class="signin-grid">
+    <div class="signin-brand" style="background:linear-gradient(160deg, oklch(24% 0.045 250), oklch(34% 0.05 250));display:flex;flex-direction:column;justify-content:space-between;">
       <div style="display:flex;align-items:center;gap:12px;">
         <img src="${LOGO}" style="height:40px;width:auto;border-radius:6px;background:#fff;padding:4px 8px;object-fit:contain;"/>
       </div>
       <div style="max-width:420px;">
         <div style="color:oklch(85% 0.02 250);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">Customer Portal</div>
-        <div style="color:#fff;font-size:34px;font-weight:700;line-height:1.25;margin-bottom:16px;text-wrap:pretty;">Global MRO &amp; procurement, tracked from request to delivery.</div>
+        <div class="signin-tagline" style="color:#fff;font-size:34px;font-weight:700;line-height:1.25;margin-bottom:16px;text-wrap:pretty;">Global MRO &amp; procurement, tracked from request to delivery.</div>
         <div style="color:oklch(80% 0.02 250);font-size:15px;line-height:1.6;">Submit requisitions, watch approvals move, and see every order synced straight from your ERP.</div>
       </div>
       <div style="color:oklch(65% 0.02 250);font-size:12px;">© 2026 Refteck Solutions. All rights reserved.</div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;padding:40px;">
+    <div class="signin-form-wrap" style="display:flex;align-items:center;justify-content:center;">
       <div style="width:100%;max-width:380px;">${body}</div>
     </div>
   </div>`;
@@ -208,20 +470,20 @@
             const items = NAV_DEFS.map(n => {
                 const active = state.screen === n.key;
                 const iconColor = active ? ACCENT : 'oklch(70% 0.02 250)';
-                return `<div class="navItem" data-nav="${n.key}" style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:9px;cursor:pointer;margin-bottom:2px;background:${active ? 'oklch(32% 0.05 250)' : 'transparent'};">
+                return `<div class="navItem nav-item" data-nav="${n.key}" style="background:${active ? 'oklch(32% 0.05 250)' : 'transparent'};">
       <div style="width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${navIcon(n.icon, iconColor)}</div>
-      <div style="font-size:13.5px;font-weight:${active ? '700' : '500'};color:${active ? '#fff' : 'oklch(75% 0.02 250)'};">${n.label}</div>
+      <div class="nav-label" style="font-size:13.5px;font-weight:${active ? '700' : '500'};color:${active ? '#fff' : 'oklch(75% 0.02 250)'};">${n.label}</div>
     </div>`;
             }).join('');
             return `
-  <div style="background:oklch(24% 0.045 250);padding:24px 16px;display:flex;flex-direction:column;gap:4px;">
-    <div style="display:flex;align-items:center;gap:10px;padding:8px 10px 28px 10px;">
+  <div class="sidebar">
+    <div class="sidebar-logo" style="display:flex;align-items:center;gap:10px;padding:8px 10px 28px 10px;">
       <img src="${LOGO}" style="height:32px;width:auto;border-radius:6px;background:#fff;padding:3px 6px;object-fit:contain;"/>
     </div>
-    ${items}
-    <div style="flex:1;"></div>
-    <div style="display:flex;align-items:center;gap:10px;padding:14px 10px;border-top:1px solid oklch(35% 0.03 250);margin-top:8px;">
-      <div style="width:30px;height:30px;border-radius:50%;background:oklch(45% 0.045 250);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">JD</div>
+    <div class="sidebar-nav">${items}</div>
+    <div class="sidebar-spacer" style="flex:1;"></div>
+    <div class="sidebar-user" style="display:flex;align-items:center;gap:10px;padding:14px 10px;border-top:1px solid oklch(35% 0.03 250);margin-top:8px;">
+      <div style="width:30px;height:30px;border-radius:50%;background:oklch(45% 0.045 250);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">JD</div>
       <div>
         <div style="color:#fff;font-size:13px;font-weight:600;">James Dalton</div>
         <div style="color:oklch(65% 0.02 250);font-size:11px;">Procurement Mgr.</div>
@@ -276,12 +538,12 @@
                 const st = state.approvals[r.id];
                 const approveLabel = st === 'approved' ? 'Approved ✓' : 'Approve';
                 const approveStyle = `padding:8px 14px;border:none;border-radius:7px;background:${st === 'approved' ? 'oklch(90% 0.05 150)' : ACCENT};color:${st === 'approved' ? 'oklch(35% 0.1 150)' : '#fff'};font-size:12.5px;font-weight:600;cursor:pointer;`;
-                return `<div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid oklch(93% 0.006 250);">
-      <div style="flex:1;">
+                return `<div class="approval-row">
+      <div style="flex:1;min-width:180px;">
         <div style="font-size:13.5px;font-weight:600;">${r.title}</div>
         <div style="font-size:12px;color:oklch(50% 0.012 250);margin-top:2px;">${r.meta}</div>
       </div>
-      <div style="font-size:13.5px;font-weight:600;font-family:'IBM Plex Mono',monospace;width:100px;text-align:right;">${fmt(r.value)}</div>
+      <div class="approval-value" style="font-size:13.5px;font-weight:600;font-family:'IBM Plex Mono',monospace;width:100px;text-align:right;">${fmt(r.value)}</div>
       <button class="approveBtn" data-id="${r.id}" style="${approveStyle}">${approveLabel}</button>
       <button class="rejectBtn" data-id="${r.id}" style="padding:8px 14px;border:1px solid oklch(88% 0.01 25);border-radius:7px;background:#fff;color:oklch(50% 0.16 25);font-size:12.5px;font-weight:600;cursor:pointer;">Reject</button>
     </div>`;
@@ -289,17 +551,17 @@
 
             return `
   <div style="animation:fadeIn 0.3s ease;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;">
+    <div class="header-row" style="margin-bottom:28px;">
       <div>
         <div style="font-size:26px;font-weight:700;">Good morning, James</div>
         <div style="font-size:14px;color:oklch(50% 0.012 250);margin-top:4px;">Here's how your requisitions are moving today.</div>
       </div>
       <div style="font-size:12px;color:oklch(55% 0.012 250);font-family:'IBM Plex Mono',monospace;">Last synced 6 min ago</div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:28px;">${statCardsHtml}</div>
-    <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:20px;margin-bottom:20px;">
+    <div class="stat-grid">${statCardsHtml}</div>
+    <div class="dash-two-col">
       <div style="background:#fff;border:1px solid oklch(90% 0.008 250);border-radius:14px;padding:26px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:8px;">
           <div style="font-size:15px;font-weight:700;">Spend trend</div>
           <div style="font-size:12px;color:oklch(50% 0.012 250);font-family:'IBM Plex Mono',monospace;">${CURRENCY} · last 6 months</div>
         </div>
@@ -319,7 +581,7 @@
       </div>
     </div>
     <div style="background:#fff;border:1px solid oklch(90% 0.008 250);border-radius:14px;padding:26px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:8px;">
         <div style="font-size:15px;font-weight:700;">Awaiting your approval</div>
         <a href="#" id="viewAllPrs" style="font-size:12.5px;font-weight:600;">View all →</a>
       </div>
@@ -352,7 +614,7 @@
 
             return `
   <div style="animation:fadeIn 0.3s ease;">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+    <div class="header-row" style="margin-bottom:6px;">
       <div>
         <div style="font-size:26px;font-weight:700;">Purchase Requisitions</div>
         <div style="font-size:14px;color:oklch(50% 0.012 250);margin-top:4px;">Automatically synced from your connected ERP systems.</div>
@@ -361,16 +623,20 @@
     </div>
     <div style="font-size:12px;color:oklch(55% 0.012 250);font-family:'IBM Plex Mono',monospace;margin-bottom:20px;">Last sync: ${state.syncing ? 'syncing…' : 'Today, 9:42 AM — SAP, Oracle, Microsoft Dynamics'}</div>
     <div style="background:#fff;border:1px solid oklch(90% 0.008 250);border-radius:14px;overflow:hidden;">
-      <div style="display:grid;grid-template-columns:${cols};padding:14px 20px;background:oklch(97% 0.004 250);border-bottom:1px solid oklch(90% 0.008 250);">
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">PR Number</div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">Requester</div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">Department</div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;text-align:right;padding-right:16px;">Value</div>
-        <div></div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">Date</div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">Status</div>
+      <div class="table-scroll">
+        <div style="min-width:760px;">
+          <div style="display:grid;grid-template-columns:${cols};padding:14px 20px;background:oklch(97% 0.004 250);border-bottom:1px solid oklch(90% 0.008 250);">
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">PR Number</div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">Requester</div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">Department</div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;text-align:right;padding-right:16px;">Value</div>
+            <div></div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">Date</div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;">Status</div>
+          </div>
+          ${rowsHtml}
+        </div>
       </div>
-      ${rowsHtml}
     </div>
   </div>`;
         }
@@ -407,12 +673,12 @@
                     const confColor = li.confidence >= 0.95 ? 'oklch(58% 0.13 150)' : li.confidence >= 0.9 ? 'oklch(70% 0.15 80)' : 'oklch(58% 0.18 25)';
                     const confRow = SHOW_OCR_CONFIDENCE ? `<div style="font-size:10.5px;color:${confColor};margin:-4px 0 6px 2px;font-family:'IBM Plex Mono',monospace;">OCR confidence ${Math.round(li.confidence * 100)}%</div>` : '';
                     return `
-      <div style="display:grid;grid-template-columns:2.2fr 0.6fr 0.6fr 0.9fr 28px;gap:8px;align-items:center;padding:9px 0;border-top:1px solid oklch(94% 0.006 250);">
-        <input class="descInput" data-id="${li.id}" value="${esc(li.description)}" style="width:100%;padding:8px 9px;border:1px solid oklch(90% 0.008 250);border-radius:6px;font-size:13px;"/>
-        <input class="qtyInput" data-id="${li.id}" value="${esc(li.qty)}" style="width:100%;padding:8px 9px;border:1px solid oklch(90% 0.008 250);border-radius:6px;font-size:13px;text-align:center;"/>
-        <input class="uomInput" data-id="${li.id}" value="${esc(li.uom)}" style="width:100%;padding:8px 9px;border:1px solid oklch(90% 0.008 250);border-radius:6px;font-size:13px;text-align:center;"/>
-        <div style="font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace;text-align:right;">${lineTotal}</div>
-        <div class="removeLine" data-id="${li.id}" style="width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:oklch(55% 0.15 25);font-size:16px;line-height:1;">×</div>
+      <div class="line-item-row">
+        <input class="descInput li-desc" data-id="${li.id}" value="${esc(li.description)}" style="width:100%;padding:8px 9px;border:1px solid oklch(90% 0.008 250);border-radius:6px;font-size:13px;"/>
+        <input class="qtyInput li-qty" data-id="${li.id}" value="${esc(li.qty)}" style="width:100%;padding:8px 9px;border:1px solid oklch(90% 0.008 250);border-radius:6px;font-size:13px;text-align:center;"/>
+        <input class="uomInput li-uom" data-id="${li.id}" value="${esc(li.uom)}" style="width:100%;padding:8px 9px;border:1px solid oklch(90% 0.008 250);border-radius:6px;font-size:13px;text-align:center;"/>
+        <div class="li-total" style="font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace;text-align:right;">${lineTotal}</div>
+        <div class="removeLine li-remove" data-id="${li.id}" style="width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:oklch(55% 0.15 25);font-size:16px;line-height:1;">×</div>
       </div>
       ${confRow}`;
                 }).join('');
@@ -426,10 +692,10 @@
         </div>
         <div style="font-size:13px;color:oklch(30% 0.08 150);">OCR extraction complete — review the line items below before submitting.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:22px;">
+      <div class="upload-review-grid">
         <div style="background:oklch(97% 0.004 250);border:1px solid oklch(90% 0.008 250);border-radius:14px;padding:18px;">
           <div style="font-size:12px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:12px;">Original document</div>
-          <div style="aspect-ratio:0.78;border-radius:10px;background:repeating-linear-gradient(135deg, oklch(93% 0.006 250), oklch(93% 0.006 250) 10px, oklch(96% 0.004 250) 10px, oklch(96% 0.004 250) 20px);display:flex;align-items:center;justify-content:center;">
+          <div style="aspect-ratio:0.78;max-height:420px;border-radius:10px;background:repeating-linear-gradient(135deg, oklch(93% 0.006 250), oklch(93% 0.006 250) 10px, oklch(96% 0.004 250) 10px, oklch(96% 0.004 250) 20px);display:flex;align-items:center;justify-content:center;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(45% 0.012 250);background:#fff;padding:6px 10px;border-radius:6px;border:1px solid oklch(88% 0.01 250);">PR_Refteck_00842.pdf</div>
           </div>
         </div>
@@ -455,9 +721,9 @@
               <div style="font-size:16px;font-weight:700;font-family:'IBM Plex Mono',monospace;">${lineItemsTotal}</div>
             </div>
           </div>
-          <div style="display:flex;gap:12px;margin-top:20px;">
-            <button id="discardBtn" style="flex:1;padding:13px;border:1px solid oklch(85% 0.008 250);border-radius:8px;background:#fff;font-size:14px;font-weight:600;cursor:pointer;">Discard</button>
-            <button id="submitPrBtn" style="flex:2;padding:13px;border:none;border-radius:8px;background:oklch(28% 0.045 250);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">Submit Purchase Requisition</button>
+          <div class="actions-row">
+            <button id="discardBtn" style="padding:13px;border:1px solid oklch(85% 0.008 250);border-radius:8px;background:#fff;font-size:14px;font-weight:600;cursor:pointer;">Discard</button>
+            <button id="submitPrBtn" style="flex-grow:2;padding:13px;border:none;border-radius:8px;background:oklch(28% 0.045 250);color:#fff;font-size:14px;font-weight:700;cursor:pointer;">Submit Purchase Requisition</button>
           </div>
         </div>
       </div>
@@ -506,17 +772,17 @@
 
             return `
   <div style="animation:fadeIn 0.3s ease;">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;">
+    <div class="header-row" style="margin-bottom:22px;">
       <div>
         <div style="font-size:26px;font-weight:700;">Reports</div>
         <div style="font-size:14px;color:oklch(50% 0.012 250);margin-top:4px;">PR/PO history and delivery performance across your account.</div>
       </div>
-      <div style="display:flex;gap:10px;">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
         <button style="padding:10px 16px;border:1px solid oklch(85% 0.008 250);border-radius:8px;background:#fff;font-size:13px;font-weight:600;cursor:pointer;">Export CSV</button>
         <button style="padding:10px 16px;border:1px solid oklch(85% 0.008 250);border-radius:8px;background:#fff;font-size:13px;font-weight:600;cursor:pointer;">Export PDF</button>
       </div>
     </div>
-    <div style="display:flex;gap:10px;margin-bottom:20px;">
+    <div class="filters-row" style="margin-bottom:20px;">
       <select style="padding:9px 12px;border:1px solid oklch(88% 0.008 250);border-radius:8px;font-size:13px;background:#fff;">
         <option>Last 6 months</option><option>Last 12 months</option><option>Year to date</option>
       </select>
@@ -524,7 +790,7 @@
         <option>All statuses</option><option>Approved</option><option>Pending</option><option>Rejected</option>
       </select>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px;">
+    <div class="reports-stat-grid">
       <div style="background:#fff;border:1px solid oklch(90% 0.008 250);border-radius:14px;padding:22px;">
         <div style="font-size:12px;font-weight:600;color:oklch(50% 0.012 250);text-transform:uppercase;margin-bottom:10px;">Total requisitions</div>
         <div style="font-size:26px;font-weight:700;font-family:'IBM Plex Mono',monospace;">312</div>
@@ -543,16 +809,20 @@
       <div style="display:flex;align-items:flex-end;gap:18px;height:140px;">${deliveryTrendHtml}</div>
     </div>
     <div style="background:#fff;border:1px solid oklch(90% 0.008 250);border-radius:14px;overflow:hidden;">
-      <div style="display:grid;grid-template-columns:${cols};padding:14px 20px;background:oklch(97% 0.004 250);border-bottom:1px solid oklch(90% 0.008 250);">
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">PO Number</div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">Vendor</div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;text-align:right;padding-right:16px;">Value</div>
-        <div></div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">Promised</div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">Delivered</div>
-        <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">On-time</div>
+      <div class="table-scroll">
+        <div style="min-width:680px;">
+          <div style="display:grid;grid-template-columns:${cols};padding:14px 20px;background:oklch(97% 0.004 250);border-bottom:1px solid oklch(90% 0.008 250);">
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">PO Number</div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">Vendor</div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;text-align:right;padding-right:16px;">Value</div>
+            <div></div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">Promised</div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">Delivered</div>
+            <div style="font-size:11.5px;font-weight:700;color:oklch(45% 0.012 250);text-transform:uppercase;">On-time</div>
+          </div>
+          ${reportRowsHtml}
+        </div>
       </div>
-      ${reportRowsHtml}
     </div>
   </div>`;
         }
@@ -572,9 +842,9 @@
 
             root.innerHTML = `
   <div style="width:100%;min-height:100vh;background:oklch(98% 0.004 250);color:oklch(20% 0.01 250);">
-    <div style="display:grid;grid-template-columns:248px 1fr;min-height:100vh;">
+    <div class="app-shell">
       ${renderSidebar()}
-      <div style="padding:32px 40px 60px 40px;max-width:1280px;">${content}</div>
+      <div class="content-area">${content}</div>
     </div>
   </div>`;
             bindPortalEvents();
