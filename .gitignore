@@ -5,3 +5,6 @@
 tags
 node_modules
 __pycache__
+# Customer portal build output
+customer_portal/public/frontend
+customer_portal/www/customer-portal.html
