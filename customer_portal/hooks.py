@@ -246,28 +246,3 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-
-
-# Customer portal SPA (frontend/ → www/customer-portal.html)
-# ------------------------------------------------------------
-
-website_route_rules = [
-	{"from_route": "/customer-portal/<path:app_path>", "to_route": "customer-portal"},
-]
-
-after_install = "customer_portal.install.after_install"
-after_migrate = "customer_portal.install.after_migrate"
-
-doc_events = {
-	"Quotation": {"on_submit": "customer_portal.events.quotation_on_submit"},
-	"Sales Order": {
-		"before_validate": "customer_portal.events.sales_order_before_validate",
-		"on_submit": "customer_portal.events.sales_order_on_submit",
-		"on_cancel": "customer_portal.events.sales_order_on_cancel",
-	},
-	"Sales Invoice": {
-		"after_insert": "customer_portal.events.sales_invoice_after_insert",
-		"on_submit": "customer_portal.events.sales_invoice_on_submit",
-	},
-	"Communication": {"after_insert": "customer_portal.events.communication_after_insert"},
-}
